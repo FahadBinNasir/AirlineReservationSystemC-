@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-label="Airline Reservation System: auth flow with credential stations routing into a central auth core">
+  <style>
+    .surface{fill:#F3F2F2;stroke:#201E1D;stroke-width:1}
+    .panel{fill:#F8F4F4;stroke:#BAB6B6;stroke-width:1}
+    .panel-alt{fill:#EAE7E7;stroke:#BAB6B6;stroke-width:1}
+    .rule{stroke:#BAB6B6;stroke-width:1}
+    .ink{fill:#201E1D}
+    .sub{fill:#605D5D}
+    .muted{fill:#605D5D}
+    .signal{fill:#EC3013}
+    .signal-stroke{stroke:#EC3013}
+    .accent{stroke:#AE1800}
+    .route{stroke:#605D5D;stroke-width:1;fill:none;stroke-dasharray:5 7}
+    .dot{fill:#605D5D;opacity:.34}
+    .bracket{stroke:#605D5D;stroke-width:1.4;fill:none}
+    .ok{fill:#217A48}
+    .ok-stroke{stroke:#217A48}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+    .sans{font-family:Archivo,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+
+    @keyframes routeflow{to{stroke-dashoffset:-96}}
+    @keyframes ringpulse{0%,100%{opacity:.32}50%{opacity:.9}}
+    @keyframes livepulse{0%,100%{opacity:.35}50%{opacity:1}}
+    .route{animation:routeflow 4.6s linear infinite}
+    .route-b{animation-delay:-1.5s;animation-duration:5.4s}
+    .route-c{animation-delay:-2.7s;animation-duration:6.2s}
+    .ring{animation:ringpulse 3.4s ease-in-out infinite}
+    .live{animation:livepulse 2s ease-in-out infinite}
+    @media (prefers-reduced-motion: reduce){.route,.ring,.live{animation:none}}
+    @media (prefers-color-scheme: dark){
+      .surface{fill:#09090b;stroke:#27272a}
+      .panel{fill:#121215;stroke:#3f3f46}
+      .panel-alt{fill:#18181b;stroke:#3f3f46}
+      .rule{stroke:#3f3f46}
+      .ink{fill:#fafafa}
+      .sub{fill:#a1a1aa}
+      .muted{fill:#71717a}
+      .route{stroke:#3f3f46}
+      .dot{fill:#3f3f46;opacity:.45}
+      .bracket{stroke:#3f3f46}
+      .ok{fill:#4CAF78}
+      .ok-stroke{stroke:#4CAF78}
+    }
+  </style>
+
+  <defs>
+    <pattern id="dgA" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.8" class="dot"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="620" class="surface"/>
+  <rect width="1200" height="620" fill="url(#dgA)"/>
+
+  <!-- ================= LEFT COLUMN ================= -->
+  <g class="mono">
+    <rect x="56" y="66" width="7" height="7" class="signal"/>
+    <text x="74" y="74" font-size="11" font-weight="700" letter-spacing="1.6" class="signal">ARS / AIRLINE RESERVATION SYSTEM</text>
+  </g>
+
+  <text x="56" y="128" font-size="35" font-weight="600" letter-spacing="-1.7" class="ink sans">Search every</text>
+  <text x="56" y="170" font-size="35" font-weight="600" letter-spacing="-1.7" class="ink sans">flight.</text>
+  <text x="56" y="212" font-size="35" font-weight="600" letter-spacing="-1.7" class="signal sans">Book in</text>
+  <text x="56" y="254" font-size="35" font-weight="600" letter-spacing="-1.7" class="signal sans">seconds.</text>
+
+  <text x="56" y="296" font-size="12.5" class="sub sans">Airline Reservation System puts flight search, secure booking and</text>
+  <text x="56" y="316" font-size="12.5" class="sub sans">payment in one Windows desktop app — guarded by TOTP 2FA.</text>
+
+  <rect x="56" y="344" width="186" height="40" class="signal"/>
+  <text x="74" y="369" font-size="10.5" font-weight="700" letter-spacing="1.1" fill="#F3F2F2" class="mono">SEARCH FLIGHTS</text>
+  <path d="M216 364 h14 m-5 -5 l5 5 l-5 5" stroke="#F3F2F2" stroke-width="1.4" fill="none"/>
+  <rect x="256" y="344" width="140" height="40" class="panel"/>
+  <text x="274" y="369" font-size="10.5" font-weight="700" letter-spacing="1.1" class="ink mono">SIGN IN</text>
+
+  <line x1="56" y1="428" x2="500" y2="428" class="rule"/>
+  <g class="mono" font-size="10.5">
+    <rect x="56" y="448" width="9" height="9" fill="none" class="signal-stroke" stroke-width="1.4"/>
+    <text x="74" y="457" class="sub">PASSWORD HASHING</text>
+    <rect x="300" y="448" width="9" height="9" fill="none" class="signal-stroke" stroke-width="1.4"/>
+    <text x="318" y="457" class="sub">TOTP TWO-FACTOR</text>
+  </g>
+  <g class="mono" font-size="10.5">
+    <rect x="56" y="478" width="9" height="9" fill="none" class="signal-stroke" stroke-width="1.4"/>
+    <text x="74" y="487" class="sub">SMS RECOVERY</text>
+    <rect x="300" y="478" width="9" height="9" fill="none" class="signal-stroke" stroke-width="1.4"/>
+    <text x="318" y="487" class="sub">ROLE-BASED DASHBOARDS</text>
+  </g>
+
+  <!-- ================= RIGHT COLUMN : AUTH TOPOLOGY ================= -->
+  <rect x="548" y="56" width="596" height="508" class="panel-alt"/>
+  <path class="bracket" d="M 548 70 L 548 56 L 562 56"/>
+  <path class="bracket" d="M 1130 56 L 1144 56 L 1144 70"/>
+  <path class="bracket" d="M 548 550 L 548 564 L 562 564"/>
+  <path class="bracket" d="M 1130 564 L 1144 564 L 1144 550"/>
+  <text x="570" y="80" font-size="9" letter-spacing="1.4" class="muted mono">AUTH FLOW / CREDENTIAL PIPELINE</text>
+
+  <!-- routes left -> core -->
+  <path class="route" d="M 680 160 C 720 160, 738 226, 772 226"/>
+  <path class="route route-b" d="M 680 226 H 772"/>
+  <path class="route route-c" d="M 680 292 C 720 292, 738 226, 772 226"/>
+  <!-- routes core -> right -->
+  <path class="route route-b" d="M 1020 160 C 980 160, 962 226, 928 226"/>
+  <path class="route" d="M 1020 226 H 928"/>
+  <path class="route route-c" d="M 1020 292 C 980 292, 962 226, 928 226"/>
+
+  <!-- signal packets -->
+  <circle r="2.6" class="signal"><animateMotion dur="4.6s" repeatCount="indefinite" path="M 680 160 C 720 160, 738 226, 772 226"/></circle>
+  <circle r="2.6" class="signal"><animateMotion dur="5.4s" repeatCount="indefinite" path="M 680 226 H 772"/></circle>
+  <circle r="2.6" class="signal"><animateMotion dur="6.2s" repeatCount="indefinite" path="M 680 292 C 720 292, 738 226, 772 226"/></circle>
+  <circle r="2.6" class="signal"><animateMotion dur="5.4s" repeatCount="indefinite" path="M 1020 160 C 980 160, 962 226, 928 226"/></circle>
+  <circle r="2.6" class="signal"><animateMotion dur="4.6s" repeatCount="indefinite" path="M 1020 226 H 928"/></circle>
+  <circle r="2.6" class="signal"><animateMotion dur="6.2s" repeatCount="indefinite" path="M 1020 292 C 980 292, 962 226, 928 226"/></circle>
+
+  <!-- left stations -->
+  <g>
+    <rect x="580" y="134" width="100" height="52" class="panel"/>
+    <line x1="580" y1="134" x2="580" y2="186" class="accent" stroke-width="2"/>
+    <text x="592" y="156" font-size="9.5" font-weight="700" letter-spacing="0.8" class="ink mono">LOGIN</text>
+    <text x="592" y="172" font-size="8" class="muted mono">USER &#183; PASS</text>
+    <circle cx="666" cy="146" r="2.6" class="ok live"/>
+  </g>
+  <g>
+    <rect x="580" y="200" width="100" height="52" class="panel"/>
+    <line x1="580" y1="200" x2="580" y2="252" class="accent" stroke-width="2"/>
+    <text x="592" y="222" font-size="9.5" font-weight="700" letter-spacing="0.8" class="ink mono">SMS OTP</text>
+    <text x="592" y="238" font-size="8" class="muted mono">TWILIO &#183; RESET</text>
+    <circle cx="666" cy="212" r="2.6" class="ok live"/>
+  </g>
+  <g>
+    <rect x="580" y="266" width="100" height="52" class="panel"/>
+    <line x1="580" y1="266" x2="580" y2="318" class="accent" stroke-width="2"/>
+    <text x="592" y="288" font-size="9.5" font-weight="700" letter-spacing="0.8" class="ink mono">TOTP</text>
+    <text x="592" y="304" font-size="8" class="muted mono">QR &#183; 2FA</text>
+    <circle cx="666" cy="278" r="2.6" class="ok live"/>
+  </g>
+
+  <!-- right stations -->
+  <g>
+    <rect x="1020" y="167" width="100" height="52" class="panel"/>
+    <line x1="1120" y1="167" x2="1120" y2="219" class="accent" stroke-width="2"/>
+    <text x="1032" y="189" font-size="9.5" font-weight="700" letter-spacing="0.8" class="ink mono">PASSENGER</text>
+    <text x="1032" y="205" font-size="8" class="muted mono">BOOK &#183; PAY</text>
+  </g>
+  <g>
+    <rect x="1020" y="233" width="100" height="52" class="panel"/>
+    <line x1="1120" y1="233" x2="1120" y2="285" class="accent" stroke-width="2"/>
+    <text x="1032" y="255" font-size="9.5" font-weight="700" letter-spacing="0.8" class="ink mono">ADMIN</text>
+    <text x="1032" y="271" font-size="8" class="muted mono">MANAGE &#183; AUDIT</text>
+  </g>
+
+  <!-- central auth core -->
+  <rect x="786" y="88" width="128" height="248" class="panel"/>
+  <g transform="translate(850,226)">
+    <rect x="-46" y="-46" width="92" height="92" class="ring" fill="none" stroke="#EC3013" stroke-width="1" transform="rotate(45)"/>
+    <rect x="-40" y="-40" width="80" height="80" fill="none" class="accent" stroke-width="1.7"/>
+    <rect x="-33" y="-33" width="66" height="66" fill="none" class="accent" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="17" fill="none" class="accent" stroke-width="2"/>
+    <line x1="-46" y1="0" x2="46" y2="0" class="accent" stroke-width="1.3"/>
+    <line x1="0" y1="-46" x2="0" y2="46" class="accent" stroke-width="1.3"/>
+    <circle cx="0" cy="0" r="3.6" class="signal"/>
+  </g>
+  <text x="850" y="300" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="2" class="ink mono">AUTH CORE</text>
+  <line x1="802" y1="312" x2="898" y2="312" class="rule"/>
+  <text x="850" y="330" text-anchor="middle" font-size="8.5" letter-spacing="1.5" class="signal mono">ROLE ROUTER</text>
+
+  <!-- rail -->
+  <rect x="668" y="356" width="364" height="36" class="panel"/>
+  <g class="mono" font-size="9.5" letter-spacing="1.4">
+    <text x="700" y="379" class="sub">VERIFY</text>
+    <path d="M 758 374 h13 m-4 -4 l4 4 l-4 4" class="signal-stroke" stroke-width="1.4" fill="none"/>
+    <text x="784" y="379" class="sub">ROUTE</text>
+    <path d="M 836 374 h13 m-4 -4 l4 4 l-4 4" class="signal-stroke" stroke-width="1.4" fill="none"/>
+    <text x="862" y="379" class="sub">AUTHORIZE</text>
+  </g>
+
+  <rect x="668" y="404" width="364" height="36" class="panel"/>
+  <rect x="690" y="414" width="16" height="16" fill="none" class="ok-stroke" stroke-width="1.3"/>
+  <path d="M 694 422 l3 3 l6 -7" class="ok-stroke" stroke-width="1.3" fill="none"/>
+  <text x="716" y="426" font-size="9" letter-spacing="1.3" class="ok mono">TOTP 2FA + SMS RECOVERY ARMED</text>
+
+  <text x="570" y="522" font-size="8.5" letter-spacing="1.2" class="muted mono">ROUTES CARRY ROLE-RESOLVED SESSIONS TO THE RIGHT DASHBOARD</text>
+
+  <!-- ================= FOOTER ================= -->
+  <line x1="56" y1="580" x2="1144" y2="580" class="rule"/>
+  <text x="56" y="602" font-size="9" letter-spacing="1.3" class="muted mono">ARS / AIRLINE RESERVATION SYSTEM</text>
+  <text x="1144" y="602" text-anchor="end" font-size="9" letter-spacing="1.3" class="muted mono">LOGIN &#8594; VERIFY &#8594; FLY</text>
+</svg>
